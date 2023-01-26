@@ -1,26 +1,24 @@
 #include <iostream>
-#include <vector>
-#include "functions_to_implement.cpp"
+#include <functions_to_implement.cpp>
+using namespace std;
 
-std::vector<int> AddN(std::vector<int> v, int n){
-    for(int &i : v){
-        i += n;
-    }
-    return v;
-}
+int RemoveTwos(int original);
+long long Factorial(long long n);
+int Sign(int num);
 
-int Sign(int num) {
-    if(num < 0)
-        return -1;
-    else if(num > 0)
-        return 1;
-    else
-        return 0;
-}
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
 
-int RemoveTwos(int original){
-    while(original % 2 == 0){
-        original /=2;
-    }
-    return original;
+    int new_num = RemoveTwos(num);
+    cout << "Number with twos removed: " << new_num << endl;
+
+    long long factorial = Factorial(num);
+    cout << "Factorial of " << num << " is: " << factorial << endl;
+
+    int sign = Sign(num);
+    cout << "Sign of " << num << " is: " << sign << endl;
+
+    return 0;
 }
